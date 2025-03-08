@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMeet - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="light-mode">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="QuickMeet Logo" class="logo-image">
+            QuickMeet
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="meeting.html" >Join Meeting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="openMeetingPopup()">Create Meeting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            </ul>
+            <button id="darkModeToggle" class="btn btn-outline-secondary ml-3">
+                <i class="fas fa-moon"></i> <!-- Initial icon for dark mode -->
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid d-flex flex-column">
+        <div class="hero d-flex align-items-center flex-grow-1">
+            <div class="hero-content col-md-6">
+                <h1 class="hero-title">Welcome to QuickMeet</h1>
+                <p class="hero-description">Join or create meetings with ease and efficiency.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-success join-meeting" onclick="openMeetingPopup()">
+                        <i class="fas fa-sign-in-alt"></i> Join Meeting
+                    </button>
+                    <button class="btn btn-primary create-meeting" onclick="openMeetingPopup()">
+                        <i class="fas fa-plus"></i> Create Meeting
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image col-md-6">
+                <img src="banner.png" alt="Meeting Banner" class="img-fluid">
+            </div>
+        </div>
+        <h1>Features</h1>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-video fa-3x" style="color: #007bff;"></i> <!-- Blue color for video icon -->
+                <h3>Instant Meeting Creation</h3>
+                <p>Start or join a video call with a single click, no sign-up required.</p>
+                <button class="btn">More</button>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lock fa-3x" style="color: #28a745;"></i> <!-- Green color for lock icon -->
+                <h3>Secure & Encrypted Calls</h3>
+                <p>End-to-end encryption ensures private and secure conversations.</p>
+                <button class="btn">More</button>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt fa-3x" style="color: #17a2b8;"></i> <!-- Teal color for mobile icon -->
+                <h3>Multi-Device Support</h3>
+                <p>Works seamlessly on mobile, tablet, and desktop for a smooth experience.</p>
+                <button class="btn">More</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-left">
+            <div class="subscribe-section">
+                <h3>Get the freshest QuickMeet news</h3>
+                <div>
+                    <input type="email" placeholder="Enter email here">
+                    <button>Subscribe</button>
+                </div>
+                <div>
+                    <input type="checkbox" id="ageCheck">
+                    <label for="ageCheck">&nbsp;By checking the box, you agree that terms</label>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Support</a>
+                <a href="#">Terms & Privacy</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <p>&copy; 2023 QuickMeet. All rights reserved.</p>
+        </div>
+    </footer>
+    <div id="meetingPopup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMeetingPopup()">&times;</span>
+            <h2>Create Meeting</h2>
+            <div id="qrCode"></div>
+            <p id="meetingLink"></p>
+            <div class="popup-buttons">
+                <button class="btn btn-outline-primary" onclick="copyMeetingLink()">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button class="btn btn-outline-success" onclick="downloadQRCode()">
+                    <i class="fas fa-download"></i>
+                </button>
+                <button class="btn btn-outline-info" onclick="shareMeetingLink()">
+                    <i class="fas fa-share"></i>
+                </button>
+                <button class="btn btn-outline-secondary" onclick="moreQRCode()">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

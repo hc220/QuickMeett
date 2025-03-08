@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickMeet - Meeting Room</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="meeting.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <div class="left-toolbar">
+            <img src="logo.png" alt="QuickMeet Logo" class="logo-image">
+            <div class="toolbar-buttons">
+                <button class="toolbar-btn"><i class="fas fa-bars"></i></button>
+                <button class="toolbar-btn"><i class="fas fa-comments"></i></button>
+                <button class="toolbar-btn"><i class="fas fa-users"></i></button>
+                <button class="toolbar-btn"><i class="fas fa-cog"></i></button>
+            </div>
+            <button id="darkModeToggle" class="toolbar-btn theme-btn"><i class="fas fa-moon"></i></button>
+        </div>
+        <div class="main-content">
+            <div class="top-section">
+                <h1>Class 2 ZDesign Visual</h1>
+                <button class="btn btn-outline-primary">Invite Participant</button>
+            </div>
+            <div class="main-video-area">
+                <div class="participant-thumbnails">
+                    <div class="thumbnail">
+                        <img src="p-1.jpg" alt="Participant 1">
+                        <div class="participant-name">Participant 1</div>
+                    </div>
+                    <div class="thumbnail">
+                        <img src="p-2.jpg" alt="Participant 2">
+                        <div class="participant-name">Participant 2</div>
+                    </div>
+                    <!-- Add more thumbnails as needed -->
+                </div>
+                <div class="featured-speaker">
+                    <img src="p-3.jpg" alt="Featured Speaker">
+                    <div class="recording-indicator"><i class="fas fa-circle"></i> Recording</div>
+                    <div class="speaker-name">Featured Speaker</div>
+                </div>
+            </div>
+            <div class="bottom-nav">
+                <button class="btn btn-outline-secondary" id="muteButton"><i class="fas fa-microphone"></i></button>
+                <button class="btn btn-outline-secondary" id="videoToggleButton"><i class="fas fa-video"></i></button>
+                <button class="btn btn-outline-secondary" id="settingsButton"><i class="fas fa-cog"></i></button>
+                <button class="btn btn-outline-danger" id="endCallButton" ><i class="fas fa-phone-slash"></i></button>
+                
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="participant-list">
+                <h3>Participants</h3>
+                <ul>
+                    <li>
+                        <img src="p-4.jpg" alt="Profile Picture">
+                        Ledy Sintia <i class="fas fa-microphone"></i> 
+                    </li>
+                    <li>
+                        <img src="p-5.webp" alt="Profile Picture">
+                        Rachel Saigotik <i class="fas fa-microphone-slash"></i>
+                    </li>
+                    <!-- Add more participants as needed -->
+                </ul>
+            </div>
+            <div class="chat-section">
+                <h3>Chat Room</h3>
+                <div class="typing-indicator">Riska Zaitun is Typing...</div>
+                <div class="chat-messages">
+                    <div class="message">
+                        <img src="p-4.jpg" alt="Profile Picture">
+                        <div class="message-content">Can u hear my voice</div>
+                    </div>
+                    <div class="message">
+                        <img src="p-5.webp" alt="Profile Picture">
+                        <div class="message-content">Ok wait, 5 min</div>
+                    </div>
+                    <div class="message">
+                        <img src="p-4.jpg" alt="Profile Picture">
+                        <div class="message-content">Thanks...</div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" placeholder="Message..." class="chat-input">
+                    <button class="btn btn-outline-primary"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
